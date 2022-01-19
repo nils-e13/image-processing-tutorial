@@ -1,1 +1,1 @@
-# teaching-materials
+# image-processing-tutorial
