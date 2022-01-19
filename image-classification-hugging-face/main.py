@@ -2,6 +2,53 @@
 
 
 """
+# Complete the following tasks for your individual assignment.
+
+Suppose you work with the city of Amsterdam on automating garbage collection.
+Your first application is to build a trash bin recognition tool.
+The tool will be deployed on the Scan Car system with cameras.
+For more background information, please refer to the following:
+- https://www.ams-institute.org/documents/33/200122_ScanCarBooklet.pdf
+
+For this tutorial, we are going to use a machine learning model on Hugging Face.
+Hugging Face is a nice service that has a collection of pre-trained machine learning models.
+A "pre-trained" model means someone already trained the model using other data.
+Modern models can be hard to train (in terms of the amount of needed data and time).
+The benefit of using a pre-trained model is that someone already did the hard work for you.
+So, you save time collecting a large dataset to train and tune the model.
+You can check https://huggingface.co/models for a list of models.
+In this case, we are using a pre-trained Vision Transformer model.
+You can find details on the following page:
+- https://huggingface.co/google/vit-base-patch16-224
+
+Task 1: Play with the model by feeding different trash bin images to it.
+- You need to collect trash bin images by yourself (e.g., take photos outside, online image search).
+- In the written report, you need to explain how you get the images.
+- Use the web interface on https://huggingface.co/google/vit-base-patch16-224 for this task.
+
+Deliverable 1.1: Give 5 examples that the model works well.
+- The 5 examples need to be different in some way.
+- For instance, they can differ in the type or color of trash bins.
+- You need to put both the images and the predicted result from the model in the written report.
+
+Deliverable 1.2: Give 5 examples that the model does not work well, and explain why they may not work.
+- Hint: check the model details and understand the data that are used to train the model.
+- The 5 examples also need to be different in some way.
+- For instance, think about trash bin types, orientations of the bin, occlusions, weather, etc.
+- You need to put both the images and the predicted result from the model in the written report.
+- You also need to explain why these examples are not working well in the report.
+"""
+
+
+"""
+# Automate the trash bin recognition tool.
+
+Now, you have a understanding about how the model works.
+For the next task, we are going to automate the trash bin recognition tool.
+"""
+
+
+"""
 # Import python packages.
 
 Often you need to import packages to do fancy works.
@@ -14,33 +61,19 @@ import requests
 
 
 """
-# Specify the API URL of the Hugging Face API.
+# Specify the API URL and key of the Hugging Face API.
 
 In this tutorial, we are going to use the Hugging Face API.
 API means the Application Programming Interface, which allows computer programs to talk to each other.
-API_URL is the API URL that points to a model that we want to use.
-Hugging Face is a nice service that has a collection of pre-trained machine learning models.
-A "pre-trained" model means someone already trained the model using other data.
-Modern models can be hard to train (in terms of the amount of needed data and time).
-The benefit of using a pre-trained model is that someone already did the hard work for you.
-So, you save time collecting a large dataset to train and tune the model.
-You can check https://huggingface.co/models for a list of models.
-In this case, we are using a pre-trained Vision Transformer model.
-You can find details on the following page:
-- https://huggingface.co/google/vit-base-patch16-224
-"""
-API_URL = "https://api-inference.huggingface.co/models/google/vit-base-patch16-224"
-
-
-"""
-# Specify the API Key.
-
+API_URL is the Hugging Face API URL that points to a model that we want to use.
 API_KEY is the Hugging Face API key for authentication (only used for this course).
 Please do not make the API key public.
-If you are interested in creating your own API keys, see the following page:
+For more information about how to use the API, see the following page:
 - https://api-inference.huggingface.co/docs/python/html/quicktour.html
 """
-API_KEY = "[PLACE_HOLDER]"
+API_URL = "https://api-inference.huggingface.co/models/google/vit-base-patch16-224"
+#API_KEY = "[PLACE_HOLDER]"
+API_KEY = "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"
 
 
 # Below is a reusable function for interacting with the Hugging Face API.
@@ -99,25 +132,8 @@ print(data)
 
 
 """
-# Complete the following tasks for your individual assignment.
-
-Task 1: Play with the model by feeding different images to it.
-- You need to find images somewhere (e.g., online image search).
-- In the written report, you need to explain how you get the images.
 - You can make use of the "query" function in this script.
 - To allow the "query" function to access the images, you may need to upload them to the tool.
-
-Deliverable 1.1: Give 5 examples that the model works well.
-- The 5 examples need to be different in some way.
-- For instance, they can differ in categories, such as dog, tree, car, etc.
-- You need to put both the images and the predicted result from the model in the written report.
-
-Deliverable 1.2: Give 5 examples that the model does not work well, and explain why they may not work.
-- Hint: check the model details and understand the data that are used to train the model.
-- The 5 examples also need to be different in some way.
-- For instance, think about image orientations, occlusions, lighting conditions, etc.
-- You need to put both the images and the predicted result from the model in the written report.
-- You also need to explain why these examples are not working well in the report.
 """
 # Write your code below for this task.
 
