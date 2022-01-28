@@ -22,7 +22,7 @@ API_URL is the Hugging Face API URL that points to a model that we want to use.
 For more information about the model, see the following page:
 - https://huggingface.co/google/vit-base-patch16-224
 
-API_KEY is the Hugging Face API key for authentication (only used for this course).
+API_KEY is the Hugging Face API key for authentication.
 Please do not make the API key public.
 For more information about how to use the API, see the following page:
 - https://api-inference.huggingface.co/docs/python/html/quicktour.html
