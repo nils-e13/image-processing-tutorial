@@ -28,8 +28,7 @@ For more information about how to use the API, see the following page:
 - https://api-inference.huggingface.co/docs/python/html/quicktour.html
 """
 API_URL = "https://api-inference.huggingface.co/models/google/vit-base-patch16-224"
-#API_TOKEN = "[PLACE_HOLDER]"
-API_TOKEN = "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"
+API_TOKEN = "[PLACE_HOLDER]"
 
 
 # Below is a reusable function for interacting with the Hugging Face API.
