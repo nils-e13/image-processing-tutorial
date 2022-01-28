@@ -14,7 +14,7 @@ import requests
 
 
 """
-# Specify the API URL and key of the Hugging Face API.
+# Specify the API URL and token of the Hugging Face API.
 
 In this tutorial, we are going to use the Hugging Face API.
 API means the Application Programming Interface, which allows computer programs to talk to each other.
@@ -22,17 +22,18 @@ API_URL is the Hugging Face API URL that points to a model that we want to use.
 For more information about the model, see the following page:
 - https://huggingface.co/google/vit-base-patch16-224
 
-API_KEY is the Hugging Face API key for authentication.
-Please do not make the API key public.
+API_TOKEN is the Hugging Face API token for authentication.
+Please do not make the API token public.
 For more information about how to use the API, see the following page:
 - https://api-inference.huggingface.co/docs/python/html/quicktour.html
 """
 API_URL = "https://api-inference.huggingface.co/models/google/vit-base-patch16-224"
-API_KEY = "[PLACE_HOLDER]"
+#API_TOKEN = "[PLACE_HOLDER]"
+API_TOKEN = "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"
 
 
 # Below is a reusable function for interacting with the Hugging Face API.
-def query(file_path, api_url, api_key):
+def query(file_path, api_url, api_token):
     """
     Ask the Hugging Face API to run the model and return the result.
 
@@ -42,15 +43,15 @@ def query(file_path, api_url, api_key):
         The path to the image file that we want to send to the Hugging Face API.
     api_url : str
         The API URL that points to a specific machine learning model.
-    api_key : str
-        The API key for authentication.
+    api_token : str
+        The API token for authentication.
     """
-    # Construct the header of the HTTP request that includes the API key.
-    headers = {"Authorization": f"Bearer " + api_key}
+    # Construct the header of the HTTP request that includes the API token.
+    headers = {"Authorization": f"Bearer " + api_token}
     # Read the input data.
     with open(file_path, "rb") as f:
         data = f.read()
-    # Make a POST request to the API with the key and input data.
+    # Make a POST request to the API with the token and input data.
     response = requests.request("POST", api_url, headers=headers, data=data)
     # Return the output from the API
     return json.loads(response.content.decode("utf-8"))
@@ -67,7 +68,7 @@ This means that "000000039769.jpeg" is placed in the "data" folder.
 And the "data" folder is placed together with the main.py script in the same folder.
 """
 my_image = "data/000000039769.jpeg"
-data = query(my_image, API_URL, API_KEY)
+data = query(my_image, API_URL, API_TOKEN)
 
 
 """
@@ -84,7 +85,3 @@ In this case, the first element in the array {'score': 0.937, 'label': 'Egyptian
 It means that the model thinks there are Egyptian cats in the image, with 0.937 probability (which is very high).
 """
 print(data)
-
-
-# Pause before the next part of the tutorial.
-input("Press Enter to continue...")
