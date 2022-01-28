@@ -1,3 +1,3 @@
 # image-processing-tutorial
 
-The image process tutorial for the Machine Learning for Design course.
+The image processing tutorial for the Machine Learning for Design course.
