@@ -84,3 +84,30 @@ In this case, the first element in the array {'score': 0.937, 'label': 'Egyptian
 It means that the model thinks there are Egyptian cats in the image, with 0.937 probability (which is very high).
 """
 print(data)
+
+
+# Below is another resuable function for counting the number of objects in an image
+def count_objects(file_path, api_url, api_token, label):
+    """
+    Ask the Hugging Face API to run the model and count the number of objects.
+
+    Usage example:
+        data = count_objects("data/000000039769.jpeg", API_URL, API_TOKEN, "bicycle")
+
+    Attributes
+    ----------
+    file_path : str
+        The path to the image file that we want to send to the Hugging Face API.
+    api_url : str
+        The API URL that points to a specific machine learning model.
+    api_token : str
+        The API token for authentication.
+    label : str
+        The label of the object that we want to count (e.g., "bicycle").
+    """
+    data = query(file_path, API_URL, API_TOKEN)
+    count = 0
+    for d in data:
+        if d["label"] == label:
+            count += 1
+   return count
