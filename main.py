@@ -110,4 +110,4 @@ def count_objects(file_path, api_url, api_token, label):
     for d in data:
         if d["label"] == label:
             count += 1
-   return count
+    return count
