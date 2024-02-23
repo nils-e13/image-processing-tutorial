@@ -11,6 +11,10 @@ In that situation, you can use a package manager, such as pip (https://github.co
 """
 import json
 import requests
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
 
 
 """
@@ -28,7 +32,7 @@ For more information about how to use the API, see the following page:
 - https://api-inference.huggingface.co/docs/python/html/quicktour.html
 """
 API_URL = "https://api-inference.huggingface.co/models/google/vit-base-patch16-224"
-API_TOKEN = "[PLACE_HOLDER]"
+API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN")
 
 
 # Below is a reusable function for interacting with the Hugging Face API.
