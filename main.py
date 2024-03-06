@@ -31,7 +31,7 @@ Please do not make the API token public.
 For more information about how to use the API, see the following page:
 - https://api-inference.huggingface.co/docs/python/html/quicktour.html
 """
-API_URL = "https://api-inference.huggingface.co/models/google/vit-base-patch16-224"
+API_URL = "https://api-inference.huggingface.co/models/facebook/detr-resnet-50"
 API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN")
 
 
@@ -70,7 +70,7 @@ In this case, "data/000000039769.jpeg" is a relative path.
 This means that "000000039769.jpeg" is placed in the "data" folder.
 And the "data" folder is placed together with the main.py script in the same folder.
 """
-my_image = "data/000000039769.jpeg"
+my_image = "data/bike/1/271758547_496887881809012_1375450742634622577_n.jpg"
 data = query(my_image, API_URL, API_TOKEN)
 
 
